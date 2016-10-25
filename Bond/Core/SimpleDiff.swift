@@ -35,9 +35,7 @@ internal func simpleDiff<T>(_ before: Array<T>, after: Array<T>) -> [SimpleDiffO
   
   var oldIndexMap: [T: [Int]] = before.enumerated().reduce([:]) { dict, e in
     var newDict = dict
-    var tmp = dict[e.element] ?? []
-    tmp += [e.offset]
-    newDict[e.element] = tmp
+    newDict[e.element] = (dict[e.element] ?? []) + [e.offset]
     return newDict
   }
   
