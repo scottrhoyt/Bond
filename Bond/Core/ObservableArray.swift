@@ -248,14 +248,14 @@ extension ObservableArray : RangeReplaceableCollectionType {
   }
 }
 
-//extension ObservableArray : ArrayLiteralConvertible {
-//
-//  public typealias Element = ElementType
-//
-//  public convenience init(arrayLiteral elements: ElementType ...){
-//    self.init(elements)
-//  }
-//}
+extension ObservableArray : ArrayLiteralConvertible {
+
+  public typealias Element = ElementType
+
+  public convenience init(arrayLiteral elements: ElementType ...){
+    self.init(elements)
+  }
+}
 
 public extension ObservableArray where ElementType: Equatable, ElementType: Hashable  {
   
